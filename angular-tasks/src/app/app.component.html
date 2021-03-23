@@ -1,0 +1,73 @@
+<h1>Hello Angular World!!!</h1>
+<hr/>
+<p>{{ title }}</p>
+<hr/>
+<ul>
+  <li *ngFor="let n of arrFibonacci; let idx = index">
+    {{idx}}<strong>{{n}}</strong>
+  </li>
+</ul>
+<hr/>
+<ul style="list-style: none">
+  <li *ngFor="let post of objs">
+    <p>{{post.title}} <b>{{post.author}}</b></p>
+  </li>
+</ul>
+<!--<p><strong>{{ number - 5 }}</strong></p>
+<p><strong>{{ arr }}</strong></p>
+<p><strong>{{ 'Hello' + ' ' + obj.b.name + ' ' + obj.b.surname }}</strong></p>
+<app-post></app-post>
+ <app-post></app-post>
+<hr/>
+<img [src]="img" alt="">
+<app-post4></app-post4>-->
+<button (click)="toggle = !toggle">Toggle</button>
+<div [ngStyle]="{
+width: '200px',
+height: '200px',
+borderRadius: '5px',
+border: '1px solid #ccc',
+background: backgroundToggle ? 'green' : 'red'
+}">
+  Congratulation
+</div>
+<p [ngClass]="{
+red: backgroundToggle === true,
+blue: !backgroundToggle
+}">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, repellendus.
+</p>
+<p [class.blue]="!backgroundToggle"
+   [class.red]="backgroundToggle"
+>
+  Lorem ipsum FANTASTIC dolor sit amet, consectetur adipisicing elit. Tenetur, voluptas?
+</p>
+
+<!--<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, ratione?</p>
+<ng-template #blueP>//використовуємо контейнер
+<p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, laudantium.</p>
+</ng-template>-->
+
+<div [ngSwitch]="toggle" >
+  <p *ngSwitchCase="true" class="red">Lorem ios</p>
+  <p *ngSwitchCase="false" class="blue">Lorem ipsum. LoremIpsum</p>
+  <p *ngSwitchDefault>Lorem ipsum dolor sit.</p>
+</div>
+<label>
+  <button (click)="onClick()">Click me!</button>
+  <input
+    type="text"
+    (keydown.enter)="onInput($event)"
+    (blur)="onBlur(myInput.value)"
+    #myInput
+
+  >
+  <input type="text" [(ngModel)]="title">
+</label>
+<p>
+  <strong>
+    {{inputValue}}
+  </strong>
+</p>
+
+
